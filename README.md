@@ -53,12 +53,13 @@ Clone this repository to get the required files.
     <details>
 
     ```
-    ├── src/                                   # Frontend React application (client-side)
+    ├── src/                                   # Frontend React application
     │   ├── components/                        # UI Components
     │   │   ├── Main.tsx                       # Main chat interface
     │   │   ├── ChartVisualization.tsx         # Chart rendering with Recharts
     │   │   ├── ThemeToggle.tsx                # Dark/Light mode toggle
     │   │   └── chat/                          # Chat-specific components
+    │   │       ├── AnnotationsSection.tsx     # Annotations display section
     │   │       ├── ChatHeader.tsx             # Header with agent selector
     │   │       ├── ChatInput.tsx              # Message input with voice support
     │   │       ├── ChatMessage.tsx            # Message display with markdown
@@ -71,8 +72,8 @@ Clone this repository to get the required files.
     │   │       └── index.ts                   # Component exports
     │   │
     │   ├── hooks/                             # Custom React hooks
-    │   │   ├── useAgentConfig.ts              # Agent configuration & loading
     │   │   ├── useAccordionState.ts           # Accordion state management
+    │   │   ├── useAgentConfig.ts              # Agent configuration & loading
     │   │   ├── useChatMessages.ts             # Message handling & streaming
     │   │   └── useSpeechRecognition.ts        # Voice input (Web Speech API)
     │   │
@@ -96,36 +97,32 @@ Clone this repository to get the required files.
     │   │   └── theme.ts                       # Dark/Light theme definitions
     │   │
     │   ├── config/                            # App configuration
-    │   │   └── env.ts                         # Environment variable validation & type-safe access
+    │   │   └── env.ts                         # Environment variable validation
     │   │
-    │   └── index.tsx                          # App entry point
+    │   └── index.tsx                          # App entry point with ErrorBoundary
     │
-    ├── server/                                # Minimal backend for proxying API requests and securing the PAT (Node.js/Express)
-    │   ├── server.js                          # Express server (PAT used only server-side for API calls; never exposed to frontend)
-    │   └── constants.js                       # Server constants, error messages, and (if applicable) configuration/env validation
+    ├── server/                                # Backend proxy server (Node.js/Express)
+    │   ├── server.js                          # Express server (PAT secured here)
+    │   └── constants.js                       # Server constants & error messages
     │
     ├── public/                                # Static assets
     │   ├── images/                            # Logos and icons
     │   │   ├── icons/                         # App icons
-    │   │   └── logos/                         # Brand logos
+    │   │   │   └── dash_snowboard_512.png     # Alternative app icon
+    │   │   ├── logos/                         # Brand logos
     │   ├── index.html                         # HTML template
     │   ├── manifest.json                      # PWA manifest
     │   ├── robots.txt                         # SEO configuration
     │   └── _headers                           # Security headers for deployment
-    │
-    ├── build/                                 # Production build output (generated)
-    │   ├── static/                            # Compiled JS/CSS bundles
-    │   ├── images/                            # Optimized images
-    │   ├── index.html                         # Minified HTML
-    │   └── _headers                           # Security headers
     │
     ├── package.json                           # Dependencies & npm scripts
     ├── tsconfig.json                          # TypeScript configuration
     │
     ├── env.backend.example                    # Backend environment template
     ├── env.frontend.example                   # Frontend environment template
+    │
+    ├── README.md                              # Main documentation (you are here!)
     ```
-
     </details>
 
 ### 2. Install Dependencies
