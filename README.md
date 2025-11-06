@@ -39,17 +39,7 @@ Use this as a starter project or template and extend or customize it. Also note 
 
 Clone this repository to get the required files.
 
-* Folders
-    - `src/` 
-    - `server/` 
-    - `public/`   
-* Files
-    - `package.json`
-    - `tsconfig.json`
-    - `env.backend.example`
-    - `env.frontend.example`
-
-    > #### Expand to see the source files details.
+    > #### Expand to see the folder strucure and files details.
     <details>
 
     ```
