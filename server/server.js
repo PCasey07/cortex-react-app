@@ -79,6 +79,11 @@ const corsOptions = {
       ? process.env.ALLOWED_ORIGINS.split(',').map(o => o.trim())
       : [];
     
+    // Check for wildcard (allow all origins)
+    if (allowedOrigins.includes('*')) {
+      return callback(null, true);
+    }
+    
     if (allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {

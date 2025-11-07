@@ -25,15 +25,21 @@ export interface SnowflakeConfig {
  */
 const validateEnvironment = (): SnowflakeConfig => {
   // Primary required variable: backend URL
+  // Empty string means "use same origin" (for SPCS/nginx proxy setups)
+  // Non-empty string is the actual backend URL (for local dev or separate backend)
   const backendUrl = process.env.REACT_APP_BACKEND_URL;
   
-  if (!backendUrl) {
+  if (backendUrl === undefined) {
     throw new Error(
       'Missing required environment variable: REACT_APP_BACKEND_URL\n' +
-      'Please set this to your backend proxy server URL (e.g., http://localhost:3001)\n' +
+      'For local development: REACT_APP_BACKEND_URL=http://localhost:3001\n' +
+      'For SPCS deployment: REACT_APP_BACKEND_URL="" (empty string)\n' +
       'See the README for setup instructions.'
     );
   }
+  
+  // backendUrl can be empty string (for SPCS) or a URL (for local/separate backend)
+  // Both are valid
 
   // Legacy variables (optional, kept for backward compatibility)
   const legacyVars = {
@@ -64,7 +70,7 @@ export const config = validateEnvironment();
  */
 export const getEnvConfigStatus = () => {
   const requiredEnvVars = [
-    { key: 'REACT_APP_BACKEND_URL', label: 'Backend Proxy URL', set: !!process.env.REACT_APP_BACKEND_URL, required: true },
+    { key: 'REACT_APP_BACKEND_URL', label: 'Backend Proxy URL', set: process.env.REACT_APP_BACKEND_URL !== undefined, required: true },
   ];
 
   const missingRequired = requiredEnvVars.filter(v => v.required && !v.set);
@@ -76,4 +82,3 @@ export const getEnvConfigStatus = () => {
     missingCount: missingRequired.length
   };
 };
-

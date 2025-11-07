@@ -18,6 +18,7 @@ Use this as a starter project or template and extend or customize it. Also note 
     - [Future Enhancements](#future-enhancements)
     - [Common Issues](#common-issues)
 - [Optimized Build](#optimized-build)
+- [Deploy To Snowpark Container Services](#deploy-to-snowpark-container-services)
 - [Questions](#questions)
 
 ---
@@ -260,6 +261,10 @@ REACT_APP_BACKEND_URL=https://api.railway.app npm run build
 REACT_APP_BACKEND_URL=https://my-function.vercel.app npm run build
 ```
 
+## Deploy To Snowpark Container Services
+
+If you'd like to deploy this app to Snowpark Container Services in your account, [follow the instructions outlined here](spcs/README.md).
+
 ## Questions
 
-If you have any questions, comments or feedack, reach out to [Dash DesAI](https://www.linkedin.com/in/dash-desai/).
+If you have any questions, comments or feedback, please reach out to [Dash DesAI](https://www.linkedin.com/in/dash-desai/).
