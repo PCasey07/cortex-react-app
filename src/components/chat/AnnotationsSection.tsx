@@ -66,7 +66,10 @@ export const AnnotationsSection: React.FC<AnnotationsSectionProps> = ({
             variant="body2"
             sx={{
               fontWeight: 600,
-              color: 'inherit'
+              color: 'inherit',
+              wordWrap: 'break-word',
+              overflowWrap: 'break-word',
+              wordBreak: 'break-word'
             }}
           >
             {title}
@@ -82,7 +85,11 @@ export const AnnotationsSection: React.FC<AnnotationsSectionProps> = ({
               color: 'inherit',
               lineHeight: 1.5,
               maxHeight: '200px',
-              overflowY: 'auto'
+              overflowY: 'auto',
+              wordWrap: 'break-word',
+              overflowWrap: 'break-word',
+              wordBreak: 'break-word',
+              whiteSpace: 'pre-wrap'
             }}
           >
             {annotation.text.length > 400 
