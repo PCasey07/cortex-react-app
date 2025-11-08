@@ -11,6 +11,8 @@ If you'd like to deploy this app to Snowpark Container Services in your account,
 
     **NOTE**: If you're using SnowCLI, remember to replace `your-snowcli-connection-name` in commands below with your connection name.
 
+https://github.com/user-attachments/assets/ec175c62-25ec-49bf-bd1f-299a0eea7188
+
 ## Steps
 
 ### Step 1: Setup Snowflake
