@@ -153,7 +153,9 @@ Browse to the cloned repo folder on your local machine. Then, run the following 
 npm run start:all
 ```
 
-The application will automatically launch on [http://localhost:3000](http://localhost:3000) in a browser window
+NOTE: If you get `SecurityError: Cannot initialize local storage without a '--localstorage-file' path` try downgrading to version 20.
+
+If all goes well, the application will automatically launch on [http://localhost:3000](http://localhost:3000) in a browser window.
 
 ### Demo
 
@@ -200,8 +202,10 @@ https://github.com/user-attachments/assets/03cdaf49-51aa-4f8b-8bf8-26310249f169
    - Chrome, Edge, or Safari browser (not supported in Firefox)
    - Microphone permissions granted to the browser
    - HTTPS connection (required by browser for security)
+  
+8. **Node.js** - If you get `SecurityError: Cannot initialize local storage without a '--localstorage-file' path` try downgrading to version 20.
 
-8. **Port Already in Use**
+9. **Port Already in Use**
 
     If you get an error that port 3000 or 3001 is already in use:
 
